@@ -1,3 +1,4 @@
+import _ from 'lodash'
 import React, {Component} from 'react'
 import ReactDOM from 'react-dom'
 import SearchBar from './components/search_bar'
@@ -13,19 +14,35 @@ class App extends Component {
     constructor(props) {
         super(props)
 
-        this.state = { videos: []};
+        this.state = { 
+            videos: [],
+            selectedVideo: null
+        };
 
-        YTSearch({key: API_KEY, term: 'badminton'}, (videos) => {
-            this.setState({ videos })
+        this.searchVideo('Tesla')
+    }
+
+    searchVideo(searchTerm) {
+        YTSearch({key: API_KEY, term: searchTerm}, (videos) => {
+            this.setState({
+                videos: videos,
+                selectedVideo: videos[0]
+            })
         })
     }
 
     render() {
+        // Use lodash to throttle search term input, run once every 300 ms
+        const searchVideo = _.debounce((term) => { this.searchVideo(term) }, 300)
+
+        // Pass properties to VideoList
         return (
             <div>
-                <SearchBar />
-                <VideoDetail video = {this.state.videos[0]}/>
-                <VideoList videos = {this.state.videos} />
+                <SearchBar onSearchTermChange = {searchVideo}/>
+                <VideoDetail video = {this.state.selectedVideo}/>
+                <VideoList 
+                    onVideoSelect = {selectedVideo => this.setState({selectedVideo})}
+                    videos = {this.state.videos} />
             </div>
         )    
     }

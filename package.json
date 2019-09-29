@@ -1,7 +1,7 @@
 {
   "name": "React-YouTube-Player",
   "version": "1.0.0",
-  "description": "YouTube video player web app",
+  "description": "YouTube Video Player React Web App",
   "main": "index.js",
   "repository": "",
   "scripts": {

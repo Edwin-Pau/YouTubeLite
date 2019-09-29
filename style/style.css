@@ -1,0 +1,37 @@
+.search-bar {
+    margin: 20px;
+    text-align: center;
+}
+
+.search-bar input {
+    width: 40%;
+}
+
+.video-item img {
+    max-width: 64px;
+}
+
+.video-detail .details {
+    font-size: 14px;
+    font-family: Arial, Helvetica, sans-serif;
+    margin-top: 10px;
+    padding: 10px;
+    border: 1px solid #ddd;
+    border-radius: 10px;
+}
+
+.list-group-item {
+    font-size: 14px;
+    font-family: Arial, Helvetica, sans-serif;
+    padding: 10px;
+    margin: 5px;
+    cursor: pointer;
+    border-radius: 10px;
+    transition-duration: 0.4s;
+}
+
+.list-group-item:hover {
+    background-color: #eee;
+    transition-duration: 0.4s;
+    transform: translate(10%, 0%);
+}

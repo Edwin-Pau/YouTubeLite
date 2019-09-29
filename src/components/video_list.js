@@ -6,6 +6,7 @@ const VideoList = (props) => {
     const videoItems = props.videos.map((eachVideo) => {
         // Always add a key
         return <VideoListItem
+                    onVideoSelect = {props.onVideoSelect}
                     key = {eachVideo.etag} 
                     video = {eachVideo} />
     })

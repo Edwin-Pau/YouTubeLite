@@ -12,12 +12,17 @@ class SearchBar extends Component {
         // "onChange is a REACT property"
         // Always use setState to manipulate state
         return (
-            <div>
+            <div className="search-bar">
                 <input 
                     value = {this.state.searchterm}
-                    onChange = {event => this.setState({ searchterm: event.target.value })} />
+                    onChange = {event => this.onInputChange(event.target.value)} />
             </div>
         )
+    }
+
+    onInputChange(searchTerm) {
+        this.setState({searchterm: searchTerm})
+        this.props.onSearchTermChange(searchTerm)
     }
 }
 
