@@ -7,7 +7,7 @@ import VideoList from './components/video_list'
 import VideoDetail from './components/video_detail'
 
 // Google YouTube data api key.
-const API_KEY = 'AIzaSyBl4-1wNX2wYkGx2w-smuTQDx2BO-QGXBA'
+const API_KEY = 'removed api key on git'
 
 // Create a new component. This component should produce some HTML.
 class App extends Component {
